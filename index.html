@@ -112,12 +112,20 @@
     // Data extracted from README.md
     const data = [
     {
+        "time": "2025-03",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2503.00555\">Safety Tax: Safety Alignment Makes Your Large Reasoning Models Less Reasonable</a>",
+        "question": "Does safety alignment negatively impact the reasoning capabilities of Large Reasoning Models (LRMs)?",
+        "method": "Empirically evaluates LRMs on reasoning benchmarks before and after safety alignment, identifying a \"Safety Tax\" where reasoning performance degrades as safety increases.",
+        "remark": ""
+    },
+    {
         "time": "2025-08",
         "venue": "arxiv2025",
         "paper": "<a href=\"https://arxiv.org/pdf/2508.00324\">R1-ACT: Efficient Reasoning Model Safety Alignment by Activating Safety Knowledge</a>",
         "question": "Why do Large Reasoning Models (LRMs) exhibit safety risks despite possessing safety knowledge, and how can we activate this knowledge during reasoning?",
         "method": "Proposes <strong>R1-ACT</strong>, a data-efficient post-training method that inserts a \"harmfulness assessment\" step into the reasoning chain (Understanding $\\rightarrow$ Assessment $\\rightarrow$ Solution) to explicitly activate safety knowledge.",
-        "remark": ""
+        "remark": "$\\color{green}{\\checkmark}$"
     },
     {
         "time": "2025-04",
@@ -184,6 +192,14 @@
         "remark": "$\\color{green}{\\checkmark}$"
     },
     {
+        "time": "2025-07",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2507.21652\">UnsafeChain: Enhancing Reasoning Model Safety via Hard Cases</a>",
+        "question": "How can we enhance the safety of reasoning models, particularly when dealing with \"hard cases\" where standard alignment might fail?",
+        "method": "Proposes <strong>UnsafeChain</strong>, a method that leverages hard cases to improve the safety alignment of reasoning models.",
+        "remark": "$\\color{green}{\\checkmark}$"
+    },
+    {
         "time": "2025-05",
         "venue": "arxiv2025",
         "paper": "<a href=\"https://arxiv.org/pdf/2505.20259\">Lifelong Safety Alignment for Language Models</a>",
@@ -216,6 +232,14 @@
         "remark": "$\\color{green}{\\checkmark}$"
     },
     {
+        "time": "2025-10",
+        "venue": "OpenReview",
+        "paper": "<a href=\"https://openreview.net/pdf?id=oql27GfyPD\">Rethinking Deep Safety Alignment: Reflective Safety Alignment for Balancing Harmlessness and Helpfulness of LLMs</a>",
+        "question": "How can we better balance harmlessness and helpfulness in LLMs while defending against novel jailbreak attacks?",
+        "method": "Proposes <strong>ReAlign</strong> (Reflective Safety Alignment Framework), consisting of <strong>Reasoning-style Warmup (RW)</strong> to internalize reasoning and <strong>Self-reflective Reasoning Process Optimization (SRPO)</strong> to promote reflection and correction.",
+        "remark": "$\\color{green}{\\checkmark}$"
+    },
+    {
         "time": "2025-09",
         "venue": "arxiv2025",
         "paper": "<a href=\"https://arxiv.org/pdf/2509.14622\">Adversarial Distilled Retrieval-Augmented Guarding Model for Online Malicious Intent Detection</a>",
@@ -237,6 +261,22 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2511.21214\">Self-Guided Defense: Adaptive Safety Alignment for Reasoning Models via Synthesized Guidelines</a>",
         "question": "How can we improve model robustness against adversarial prompts while reducing benign refusals, using the model's own capabilities?",
         "method": "Proposes <strong>SGASA (Self-Guided Adaptive Safety Alignment)</strong>, a framework that internalizes model-generated safety guidelines via SFT and DPO to guide the model in identifying and refusing harmful queries adaptively.",
+        "remark": ""
+    },
+    {
+        "time": "2024-08",
+        "venue": "ACL2024-Findings",
+        "paper": "<a href=\"https://aclanthology.org/2024.findings-acl.549.pdf\">On the Vulnerability of Safety Alignment in Open-Access LLMs</a>",
+        "question": "How vulnerable is the safety alignment of open-access LLMs to malicious fine-tuning?",
+        "method": "Systematically evaluates safety vulnerability, showing that fine-tuning with limited harmful data (or even benign data) significantly compromises safety alignment.",
+        "remark": ""
+    },
+    {
+        "time": "2024-05",
+        "venue": "arxiv2024",
+        "paper": "<a href=\"https://arxiv.org/pdf/2405.06624\">Towards Guaranteed Safe AI: A Framework for Ensuring Robust and Reliable AI Systems</a>",
+        "question": "How can we transition from probabilistic safety measures (RLHF/evals) to <strong>guaranteed safety</strong> for AI systems, ensuring they adhere to explicit safety specifications?",
+        "method": "Proposes a <strong>Gatekeeper</strong> architecture (GS-AI) where a Verifier proves that the AI's output satisfies a formal safety specification before it is actuated. This involves: (1) World Model Learning, (2) Safety Specification, and (3) Verification (neuro-symbolic or formal methods).",
         "remark": ""
     }
 ];
