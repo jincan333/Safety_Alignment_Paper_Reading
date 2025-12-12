@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Alignment Paper Reading List</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            overflow-x: auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #e1e4e8;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f1f3f5;
+            cursor: pointer;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            user-select: none;
+        }
+        th:hover {
+            background-color: #e2e6ea;
+        }
+        th::after {
+            content: " \21F3"; /* Up-down arrow */
+            font-size: 0.8em;
+            color: #999;
+            float: right;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        tr:hover {
+            background-color: #f1f3f5;
+        }
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* Render LaTeX colors roughly with CSS for performance if MathJax fails or delays, 
+           though we use MathJax below. These classes are for fallback/custom rendering */
+        .color-green { color: green; font-weight: bold; }
+        .color-red { color: red; font-weight: bold; }
+        .color-orange { color: orange; font-weight: bold; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Safety Alignment Paper Reading List</h1>
+    <table id="paperTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Time</th>
+                <th onclick="sortTable(1)">Venue</th>
+                <th onclick="sortTable(2)">Paper</th>
+                <th onclick="sortTable(3)">Research Question/Idea</th>
+                <th onclick="sortTable(4)">Method</th>
+                <th onclick="sortTable(5)">Remark</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Rows will be populated by JS -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Data extracted from README.md
+    const data = [
+    {
+        "time": "2025-04",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2504.02725\">SAFER: Advancing Safety Alignment via Efficient Ex-Ante Reasoning</a>",
+        "question": "How can we improve LLM safety by enabling them to perform structured reasoning about safety *before* generating a response, covering diverse and edge cases?",
+        "method": "Proposes <strong>SAFER</strong>, a framework that uses Ex-Ante reasoning (Initial Assessment, Rule Verification, Path Calibration) and <strong>ERPO</strong> (Ex-Ante Reasoning Preference Optimization) to align models for verifiable safety judgments.",
+        "remark": "$\\color{orange}{\\triangle}$"
+    },
+    {
+        "time": "2025-12",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2512.01848\">Beyond SFT: Reinforcement Learning for Safer Large Reasoning Models with Better Reasoning Ability</a>",
+        "question": "How can we achieve robust safety alignment in Large Reasoning Models (LRMs) without compromising their reasoning capabilities, given the limitations of Supervised Fine-Tuning (SFT)?",
+        "method": "Proposes using <strong>Reinforcement Learning (RL)</strong> as a supplementary optimization framework to SFT, enabling models to learn safer behaviors during explicit reasoning processes while maintaining high utility.",
+        "remark": "$\\color{red}{\\times}$"
+    },
+    {
+        "time": "2025-10",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2510.21910\">Adversarial D\u00e9j\u00e0 Vu: Jailbreak Dictionary Learning for Stronger Generalization to Unseen Attacks</a>",
+        "question": "How can we improve adversarial robustness against **unseen** jailbreak attacks when current defenses fail due to optimization challenges or poor training data coverage?",
+        "method": "Proposes the <strong>Adversarial D\u00e9j\u00e0 Vu</strong> hypothesis: unseen jailbreaks are recombinations of existing \"adversarial skills.\" Introduces <strong>ASCoT (Adversarial Skill Compositional Training)</strong>, which learns a sparse dictionary of skill primitives from past attacks and trains models on diverse compositions of these skills to boost generalization.",
+        "remark": "Compositional attacks for generalization"
+    },
+    {
+        "time": "2025-12",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2512.07141\">Think-Reflect-Revise: A Policy-Guided Reflective Framework for Safety Alignment in Large Vision Language Models</a>",
+        "question": "How can we address the vulnerability of single-pass reasoning in LVLMs to contextual/visual jailbreaks, where models fail to recognize harmful content in their own initial output?",
+        "method": "Proposes <strong>Think-Reflect-Revise (TRR)</strong>, a framework that leverages <strong>explicit policy-guided reflection</strong> to exploit self-revealed malicious content for self-correction. It involves constructing a <strong>ReSafe</strong> dataset, initializing reflective behavior via SFT, and enhancing it via RL (GRPO).",
+        "remark": ""
+    },
+    {
+        "time": "2025-09",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2509.14760\">Reasoning over Boundaries: Enhancing Specification Alignment via Test-time Deliberation</a>",
+        "question": "How can LLMs dynamically align with scenario-specific behavioral and safety specifications (spec) during inference, especially as requirements evolve?",
+        "method": "Proposes <strong>ALIGN3</strong>, a test-time deliberation (TTD) method that reasons over spec boundaries through hierarchical reflection and revision: (1) behavior optimization, (2) safety-guided refinement, and (3) holistic specification audit. Introduces <strong>SPECBENCH</strong> for evaluation.",
+        "remark": "$\\color{green}{\\checkmark}$"
+    },
+    {
+        "time": "2025-09",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2509.24393\">Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention</a>",
+        "question": "How can we align the safety of the reasoning process *itself* in Large Reasoning Models (LRMs), given that unsafe reasoning can persist even if the final answer is safe?",
+        "method": "Proposes <strong>Intervened Preference Optimization (IPO)</strong>, which enforces safe reasoning by intervening to replace \"compliance cues\" with \"safety triggers\" to generate safe trajectories, and then using these paired trajectories for preference learning.",
+        "remark": "$\\color{green}{\\checkmark}$"
+    },
+    {
+        "time": "2025-09",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2509.05367\">Between a Rock and a Hard Place: Exploiting Ethical Reasoning to Jailbreak LLMs</a>",
+        "question": "How can attackers exploit LLMs' alignment with ethical reasoning (specifically utilitarianism in dilemmas) to bypass safety guardrails?",
+        "method": "Proposes <strong>TRIAL</strong> (Trolley Problem-based In-context Attack for LLMs), which embeds harmful queries into \"lesser of two evils\" ethical dilemmas (e.g., Trolley Problem), forcing the model to generate prohibited content to \"save\" more lives.",
+        "remark": "Multi-Turn Attack"
+    },
+    {
+        "time": "2025-07",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2507.14987\">AlphaAlign: Incentivizing Safety Alignment with Extremely Simplified Reinforcement Learning</a>",
+        "question": "How can we incentivize LLMs' latent safety awareness to achieve deep safety alignment without relying on intensive supervision or superficial refusal shortcuts?",
+        "method": "Proposes <strong>AlphaAlign</strong>, a pure RL framework with a dual-reward system (verifiable safety reward + normalized helpfulness reward) to encourage proactive safety reasoning and break the safety-utility trade-off.",
+        "remark": "$\\color{green}{\\checkmark}$"
+    },
+    {
+        "time": "2025-05",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2505.20259\">Lifelong Safety Alignment for Language Models</a>",
+        "question": "How can LLMs continuously adapt to and defend against unseen and evolving jailbreaking attacks during deployment?",
+        "method": "Proposes a <strong>Lifelong Safety Alignment</strong> framework with a competitive <strong>Meta-Attacker</strong> (discovers novel strategies) and <strong>Defender</strong> (resists them), initialized with insights from research papers via GPT-4o.",
+        "remark": ""
+    },
+    {
+        "time": "2025-05",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2505.18672\">Does Representation Intervention Really Identify Desired Concepts and Elicit Alignment?</a>",
+        "question": "Do representation intervention methods truly localize \"harmful\" concepts and elicit alignment, particularly when the boundary between harmful and benign is non-linear?",
+        "method": "Analyzes limitations of linear erasure; proposes <strong>Concept Concentration (COCA)</strong> to reframe data with explicit reasoning, simplifying the harmful/benign boundary for effective linear erasure and robust defense.",
+        "remark": "$\\color{orange}{\\triangle}$"
+    }
+];
+
+    const tbody = document.getElementById("tableBody");
+
+    function renderTable(rows) {
+        tbody.innerHTML = "";
+        rows.forEach(row => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${row.time}</td>
+                <td>${row.venue}</td>
+                <td>${row.paper}</td>
+                <td>${row.question}</td>
+                <td>${row.method}</td>
+                <td>${row.remark}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+        // Trigger MathJax re-render for new content
+        if (window.MathJax) {
+            MathJax.typesetPromise();
+        }
+    }
+
+    let sortDirection = {};
+
+    function sortTable(columnIndex) {
+        const keys = ["time", "venue", "paper", "question", "method", "remark"];
+        const key = keys[columnIndex];
+        
+        if (!sortDirection[key]) sortDirection[key] = 1;
+        else sortDirection[key] *= -1;
+
+        data.sort((a, b) => {
+            let valA = a[key].toLowerCase();
+            let valB = b[key].toLowerCase();
+            
+            // Simple strip of HTML tags for better sorting of Paper/Method columns
+            if (columnIndex === 2 || columnIndex === 4) { 
+                valA = valA.replace(/<[^>]*>/g, "");
+                valB = valB.replace(/<[^>]*>/g, "");
+            }
+
+            if (valA < valB) return -1 * sortDirection[key];
+            if (valA > valB) return 1 * sortDirection[key];
+            return 0;
+        });
+
+        renderTable(data);
+        
+        // Update arrow indicators (simple implementation)
+        const headers = document.querySelectorAll("th");
+        headers.forEach((th, idx) => {
+            if (idx === columnIndex) {
+                th.style.backgroundColor = "#e2e6ea";
+            } else {
+                th.style.backgroundColor = "#f1f3f5";
+            }
+        });
+    }
+
+    // Initial Render
+    renderTable(data);
+
+</script>
+
+</body>
+</html>
