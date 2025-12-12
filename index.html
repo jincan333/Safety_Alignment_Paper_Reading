@@ -112,6 +112,14 @@
     // Data extracted from README.md
     const data = [
     {
+        "time": "2025-08",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2508.00324\">R1-ACT: Efficient Reasoning Model Safety Alignment by Activating Safety Knowledge</a>",
+        "question": "Why do Large Reasoning Models (LRMs) exhibit safety risks despite possessing safety knowledge, and how can we activate this knowledge during reasoning?",
+        "method": "Proposes <strong>R1-ACT</strong>, a data-efficient post-training method that inserts a \"harmfulness assessment\" step into the reasoning chain (Understanding $\\rightarrow$ Assessment $\\rightarrow$ Solution) to explicitly activate safety knowledge.",
+        "remark": ""
+    },
+    {
         "time": "2025-04",
         "venue": "arxiv2025",
         "paper": "<a href=\"https://arxiv.org/pdf/2504.02725\">SAFER: Advancing Safety Alignment via Efficient Ex-Ante Reasoning</a>",
@@ -198,6 +206,38 @@
         "question": "How can we evaluate whether Large Reasoning Models (LRMs) truly understand risks (vs. Superficial Safety Alignment) in their internal reasoning?",
         "method": "Identifies <strong>Superficial Safety Alignment (SSA)</strong>; introduces <strong>Beyond Safe Answers (BSA)</strong> benchmark (2k instances, 9 risk categories) to assess reasoning safety.",
         "remark": "$\\color{orange}{\\triangle}$"
+    },
+    {
+        "time": "2025-10",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2510.01569\">InVThink: Towards AI Safety via Inverse Reasoning</a>",
+        "question": "How can we improve LLM safety by enabling them to reason through failure modes *before* generating responses (inverse thinking)?",
+        "method": "Proposes <strong>InVThink</strong>, a framework that instructs models to (1) enumerate harms, (2) analyze consequences, and (3) generate safe outputs. Uses data augmentation (teacher LM), SFT, and RL (GRPO).",
+        "remark": "$\\color{green}{\\checkmark}$"
+    },
+    {
+        "time": "2025-09",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2509.14622\">Adversarial Distilled Retrieval-Augmented Guarding Model for Online Malicious Intent Detection</a>",
+        "question": "How can we perform accurate, robust, and efficient online malicious intent detection for real-time applications, overcoming limitations of static classifiers and heavy LLMs?",
+        "method": "Proposes <strong>ADRAG</strong>, a framework combining: (1) <strong>RAFT</strong> (Retrieval-Augmented Adversarial Fine-Tuning) of a teacher model, and (2) <strong>SKD</strong> (Selective Knowledge Distillation) to a compact student guard model with an online-updated knowledge base.",
+        "remark": ""
+    },
+    {
+        "time": "2025-02",
+        "venue": "ICML2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2502.04040\">Safety Reasoning with Guidelines</a>",
+        "question": "How can we enhance LLM safety alignment to better generalize against unseen/out-of-distribution (OOD) jailbreak attacks?",
+        "method": "Proposes <strong>SRG (Safety Reasoning with Guidelines)</strong>, which guides models to perform structured, multi-step reasoning based on explicit safety guidelines to systematically elicit latent safety knowledge and robustly refuse harmful queries.",
+        "remark": "$\\color{green}{\\checkmark}$"
+    },
+    {
+        "time": "2025-11",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2511.21214\">Self-Guided Defense: Adaptive Safety Alignment for Reasoning Models via Synthesized Guidelines</a>",
+        "question": "How can we improve model robustness against adversarial prompts while reducing benign refusals, using the model's own capabilities?",
+        "method": "Proposes <strong>SGASA (Self-Guided Adaptive Safety Alignment)</strong>, a framework that internalizes model-generated safety guidelines via SFT and DPO to guide the model in identifying and refusing harmful queries adaptively.",
+        "remark": ""
     }
 ];
 
