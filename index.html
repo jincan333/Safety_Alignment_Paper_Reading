@@ -199,7 +199,10 @@
         });
         // Trigger MathJax re-render for new content
         if (window.MathJax) {
-            MathJax.typesetPromise();
+            // MathJax 3.x promise-based typesetting
+            MathJax.typesetPromise([tbody]).then(() => {
+                // Typesetting complete
+            }).catch((err) => console.log('MathJax typeset failed: ' + err.message));
         }
     }
 
@@ -242,6 +245,14 @@
 
     // Initial Render
     renderTable(data);
+    
+    // Wait for MathJax to load and do initial typesetting if needed
+    // (MathJax 3 usually typesets automatically on load, but since we inject content dynamically, we might need to trigger it)
+    window.addEventListener('load', () => {
+        if (window.MathJax) {
+             MathJax.typesetPromise([document.getElementById('tableBody')]);
+        }
+    });
 
 </script>
 
