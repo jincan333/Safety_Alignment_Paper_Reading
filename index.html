@@ -112,6 +112,38 @@
     // Data extracted from README.md
     const data = [
     {
+        "time": "2025-08",
+        "venue": "AAAI2026",
+        "paper": "<a href=\"https://arxiv.org/pdf/2508.20151\">IntentionReasoner: Facilitating Adaptive LLM Safeguards through Intent Reasoning and Selective Query Refinement</a>",
+        "question": "How can we balance safety and utility in guard models, minimizing over-refusal for borderline queries while maintaining robust defense?",
+        "method": "Proposes <strong>IntentionReasoner</strong>, a guard model that utilizes intent reasoning and multi-level classification (including \"Borderline Unharmful/Harmful\") to selectively rewrite potentially harmful queries into safe ones. Trained via SFT on a constructed dataset and RL with multi-reward optimization.",
+        "remark": ""
+    },
+    {
+        "time": "2025-07",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2507.14805\">Subliminal Learning: Language models transmit behavioral traits via hidden signals in data</a>",
+        "question": "Can language models learn behaviors from hidden signals in data?",
+        "method": "Proposes <strong>Subliminal Learning</strong>, demonstrating that models can learn to associate hidden signals in training data with specific behavioral traits and generalize this to test time.",
+        "remark": ""
+    },
+    {
+        "time": "2025-04",
+        "venue": "AAAI2026",
+        "paper": "<a href=\"https://arxiv.org/pdf/2504.01903\">STAR-1: Safer Alignment of Reasoning LLMs with 1K Data</a>",
+        "question": "How can we effectively align Large Reasoning Models (LRMs) for safety using limited data without compromising their reasoning capabilities?",
+        "method": "Proposes <strong>STAR-1</strong>, a high-quality 1k-scale safety dataset built on diversity, deliberative reasoning, and rigorous filtering. It fine-tunes LRMs to generate policy-grounded reasoning traces, achieving significant safety gains with minimal reasoning degradation.",
+        "remark": "A high-quality dataset for LRM safety"
+    },
+    {
+        "time": "2025-04",
+        "venue": "NAACL2025",
+        "paper": "<a href=\"https://aclanthology.org/2025.naacl-long.302.pdf\">Stronger Universal and Transferable Attacks by Suppressing Refusals</a>",
+        "question": "How can we generate stronger and more transferable universal adversarial attacks by explicitly preventing models from refusing harmful queries?",
+        "method": "Proposes <strong>suppressing refusals</strong>, a method that optimizes adversarial suffixes to not only maximize the target harmful response but also minimize the likelihood of refusal (e.g., \"I cannot\"). This yields state-of-the-art universal attacks.",
+        "remark": ""
+    },
+    {
         "time": "2025-02",
         "venue": "arxiv2025",
         "paper": "<a href=\"https://arxiv.org/pdf/2502.12486\">EPO: Explicit Policy Optimization for Strategic Reasoning in LLMs via Reinforcement Learning</a>",
@@ -176,6 +208,14 @@
         "remark": "$\\color{orange}{\\triangle}$"
     },
     {
+        "time": "2025-04",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2504.09420\">SaRO: Enhancing LLM Safety through Reasoning-based Alignment</a>",
+        "question": "How to address under-generalization and over-alignment in LLM safety alignment by incorporating safety-policy-driven reasoning?",
+        "method": "Proposes <strong>SaRO</strong>, a framework consisting of <strong>Reasoning-style Warmup (RW)</strong> (SFT on long-chain reasoning) and <strong>Safety-oriented Reasoning Process Optimization (SRPO)</strong> (DPO for safety reflection).",
+        "remark": "$\\color{green}{\\checkmark}$"
+    },
+    {
         "time": "2025-12",
         "venue": "arxiv2025",
         "paper": "<a href=\"https://arxiv.org/pdf/2512.01848\">Beyond SFT: Reinforcement Learning for Safer Large Reasoning Models with Better Reasoning Ability</a>",
@@ -198,6 +238,14 @@
         "question": "How can we address the vulnerability of single-pass reasoning in LVLMs to contextual/visual jailbreaks, where models fail to recognize harmful content in their own initial output?",
         "method": "Proposes <strong>Think-Reflect-Revise (TRR)</strong>, a framework that leverages <strong>explicit policy-guided reflection</strong> to exploit self-revealed malicious content for self-correction. It involves constructing a <strong>ReSafe</strong> dataset, initializing reflective behavior via SFT, and enhancing it via RL (GRPO).",
         "remark": ""
+    },
+    {
+        "time": "2025-09",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2509.11629\">Reasoned Safety Alignment: Ensuring Jailbreak Defense via Answer-Then-Check</a>",
+        "question": "How can we enhance LLM robustness against jailbreak attacks by utilizing the model's thinking ability to evaluate safety before generating the final response?",
+        "method": "Proposes <strong>Answer-Then-Check</strong>, a safety alignment approach where models generate a \"thought\" (containing a direct answer and a safety evaluation) before the final response. Introduces the <strong>Reasoned Safety Alignment (ReSA)</strong> dataset (80k examples) for fine-tuning.",
+        "remark": "$\\color{green}{\\checkmark}$"
     },
     {
         "time": "2025-09",
