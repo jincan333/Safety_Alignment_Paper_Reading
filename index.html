@@ -112,11 +112,35 @@
     // Data extracted from README.md
     const data = [
     {
+        "time": "2025-11",
+        "venue": "EMNLP2025",
+        "paper": "<a href=\"https://aclanthology.org/2025.emnlp-main.154.pdf\">Mind the Value-Action Gap: Do LLMs Act in Alignment with Their Values?</a>",
+        "question": "How well do LLMs' actions align with their stated values (the \"Value-Action Gap\")?",
+        "method": "Proposes <strong>ValueActionLens</strong>, a framework to evaluate value-action alignment. Includes a dataset of 14.8k value-informed actions across 12 cultures and 11 topics, evaluating alignment between stated values and actions.",
+        "remark": "Value-Action Gap Evaluation"
+    },
+    {
+        "time": "2025-11",
+        "venue": "EMNLP2025",
+        "paper": "<a href=\"https://aclanthology.org/2025.emnlp-main.1291.pdf\">SafeKey: Amplifying Aha-Moment Insights for Safety Reasoning</a>",
+        "question": "How can we improve Large Reasoning Models (LRMs) safety generalization to unseen jailbreak prompts by activating their internal safety reasoning?",
+        "method": "Proposes <strong>SafeKey</strong>, a framework enhancing the \"aha-moment\" in safety reasoning (key sentence) via (1) a <strong>Dual-Path Safety Head</strong> (for internal representations) and (2) a <strong>Query-Mask Modeling</strong> objective (to focus on query understanding).",
+        "remark": "Safety Aha moment"
+    },
+    {
         "time": "2025-08",
         "venue": "AAAI2026",
         "paper": "<a href=\"https://arxiv.org/pdf/2508.20151\">IntentionReasoner: Facilitating Adaptive LLM Safeguards through Intent Reasoning and Selective Query Refinement</a>",
         "question": "How can we balance safety and utility in guard models, minimizing over-refusal for borderline queries while maintaining robust defense?",
         "method": "Proposes <strong>IntentionReasoner</strong>, a guard model that utilizes intent reasoning and multi-level classification (including \"Borderline Unharmful/Harmful\") to selectively rewrite potentially harmful queries into safe ones. Trained via SFT on a constructed dataset and RL with multi-reward optimization.",
+        "remark": ""
+    },
+    {
+        "time": "2025-08",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2508.09224\">From Hard Refusals to Safe-Completions: Toward Output-Centric Safety Training</a>",
+        "question": "How can we move from hard refusals to safe completions in safety training?",
+        "method": "Proposes <strong>Output-Centric Safety Training</strong>, a method that focuses on generating safe completions rather than just refusing harmful queries.",
         "remark": ""
     },
     {
@@ -181,6 +205,14 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2502.12025\">SafeChain: Safety of Language Models with Long Chain-of-Thought Reasoning Capabilities</a>",
         "question": "How to ensure the safety of Large Reasoning Models (LRMs) with long Chain-of-Thought (CoT), given that intermediate steps might be harmful even if the final answer is safe?",
         "method": "Systematically evaluates LRM safety; analyzes reasoning traces; proposes <strong>SAFECHAIN</strong>, a safety training dataset in CoT style, to fine-tune LRMs for improved safety without compromising reasoning performance.",
+        "remark": "$\\color{green}{\\checkmark}$"
+    },
+    {
+        "time": "2025-03",
+        "venue": "arxiv2025",
+        "paper": "<a href=\"https://arxiv.org/pdf/2503.24370\">Effectively Controlling Reasoning Models through Thinking Intervention</a>",
+        "question": "How can we achieve fine-grained control over the internal reasoning processes of Large Reasoning Models (LRMs) to improve instruction following, hierarchy, and safety?",
+        "method": "Proposes <strong>Thinking Intervention</strong>, a paradigm that explicitly inserts or revises specific thinking tokens (instructions/constraints) within the model's intermediate reasoning chain, rather than just prompting the input.",
         "remark": "$\\color{green}{\\checkmark}$"
     },
     {
