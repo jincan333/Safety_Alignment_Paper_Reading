@@ -84,6 +84,9 @@ def parse_readme(readme_path="README.md"):
             # Remark often contains latex colors $\color{green}{\checkmark}$
             # We keep it as is for MathJax to render, but you might want to process unicode emojis if any
             remark_md = cols[5]
+
+            # Bib column
+            bib_md = cols[6] if len(cols) > 6 else ""
             
             entry = {
                 "time": cols[0],
@@ -91,7 +94,8 @@ def parse_readme(readme_path="README.md"):
                 "paper": paper_html,
                 "question": question_html,
                 "method": method_html,
-                "remark": remark_md
+                "remark": remark_md,
+                "bib": bib_md
             }
             data.append(entry)
             

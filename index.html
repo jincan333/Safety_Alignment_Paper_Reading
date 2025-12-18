@@ -100,6 +100,7 @@
                 <th onclick="sortTable(3)">Research Question/Idea</th>
                 <th onclick="sortTable(4)">Method</th>
                 <th onclick="sortTable(5)">Remark</th>
+                <th onclick="sortTable(6)">Bib</th>
             </tr>
         </thead>
         <tbody id="tableBody">
@@ -117,7 +118,8 @@
         "paper": "<a href=\"https://aclanthology.org/2025.emnlp-main.154.pdf\">Mind the Value-Action Gap: Do LLMs Act in Alignment with Their Values?</a>",
         "question": "How well do LLMs' actions align with their stated values (the \"Value-Action Gap\")?",
         "method": "Proposes <strong>ValueActionLens</strong>, a framework to evaluate value-action alignment. Includes a dataset of 14.8k value-informed actions across 12 cultures and 11 topics, evaluating alignment between stated values and actions.",
-        "remark": "Value-Action Gap Evaluation"
+        "remark": "Value-Action Gap Evaluation",
+        "bib": "<details><summary>Bib</summary><pre>@inproceedings{shen2025mind,<br>  title={Mind the Value-Action Gap: Do LLMs Act in Alignment with Their Values?},<br>  author={Shen, Hua and Clark, Nicholas and Mitra, Tanu},<br>  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},<br>  pages={3097--3118},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-11",
@@ -125,7 +127,8 @@
         "paper": "<a href=\"https://aclanthology.org/2025.emnlp-main.1291.pdf\">SafeKey: Amplifying Aha-Moment Insights for Safety Reasoning</a>",
         "question": "How can we improve Large Reasoning Models (LRMs) safety generalization to unseen jailbreak prompts by activating their internal safety reasoning?",
         "method": "Proposes <strong>SafeKey</strong>, a framework enhancing the \"aha-moment\" in safety reasoning (key sentence) via (1) a <strong>Dual-Path Safety Head</strong> (for internal representations) and (2) a <strong>Query-Mask Modeling</strong> objective (to focus on query understanding).",
-        "remark": "Safety Aha moment"
+        "remark": "Safety Aha moment",
+        "bib": "<details><summary>Bib</summary><pre>@inproceedings{zhou2025safekey,<br>  title={SafeKey: Amplifying Aha-Moment Insights for Safety Reasoning},<br>  author={Zhou, Kaiwen and Zhao, Xuandong and Liu, Gaowen and Srinivasa, Jayanth and Feng, Aosong and Song, Dawn and Wang, Xin Eric},<br>  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},<br>  pages={25407--25423},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-08",
@@ -133,7 +136,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2508.12790\">Reinforcement Learning with Rubric Anchors</a>",
         "question": "How can we extend Reinforcement Learning from Verifiable Rewards (RLVR) to open-ended tasks lacking verifiable ground truth?",
         "method": "Proposes <strong>Rubric-Based RL</strong>, using over 10,000 structured rubrics as reward anchors to train models on subjective tasks. Released Qwen-30B-A3B.",
-        "remark": "RL with Rubric-based Reward"
+        "remark": "RL with Rubric-based Reward",
+        "bib": "<details><summary>Bib</summary><pre>@article{huang2025reinforcement,<br>  title={Reinforcement Learning with Rubric Anchors},<br>  author={Huang, Zenan and Zhuang, Yihong and Lu, Guoshan and Qin, Zeyu and Xu, Haokai and Zhao, Tianyu and Peng, Ru and Hu, Jiaqi and Shen, Zhanming and Hu, Xiaomeng and others},<br>  journal={arXiv preprint arXiv:2508.12790},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-08",
@@ -141,7 +145,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2508.20151\">IntentionReasoner: Facilitating Adaptive LLM Safeguards through Intent Reasoning and Selective Query Refinement</a>",
         "question": "How can we balance safety and utility in guard models, minimizing over-refusal for borderline queries while maintaining robust defense?",
         "method": "Proposes <strong>IntentionReasoner</strong>, a guard model that utilizes intent reasoning and multi-level classification (including \"Borderline Unharmful/Harmful\") to selectively rewrite potentially harmful queries into safe ones. Trained via SFT on a constructed dataset and RL with multi-reward optimization.",
-        "remark": ""
+        "remark": "",
+        "bib": "<details><summary>Bib</summary><pre>@article{shen2025intentionreasoner,<br>  title={IntentionReasoner: Facilitating Adaptive LLM Safeguards through Intent Reasoning and Selective Query Refinement},<br>  author={Shen, Yuanzhe and Huang, Zisu and Guo, Zhengkang and Liu, Yide and Chen, Guanxu and Yin, Ruicheng and Zheng, Xiaoqing and Huang, Xuanjing},<br>  journal={arXiv preprint arXiv:2508.20151},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-08",
@@ -149,7 +154,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2508.09224\">From Hard Refusals to Safe-Completions: Toward Output-Centric Safety Training</a>",
         "question": "How can we move from hard refusals to safe completions in safety training?",
         "method": "Proposes <strong>Output-Centric Safety Training</strong>, a method that focuses on generating safe completions rather than just refusing harmful queries.",
-        "remark": "Safe Completion Training"
+        "remark": "Safe Completion Training",
+        "bib": "<details><summary>Bib</summary><pre>@article{yuan2025hard,<br>  title={From Hard Refusals to Safe-Completions: Toward Output-Centric Safety Training},<br>  author={Yuan, Yuan and Sriskandarajah, Tina and Brakman, Anna-Luisa and Helyar, Alec and Beutel, Alex and Vallone, Andrea and Jain, Saachi},<br>  journal={arXiv preprint arXiv:2508.09224},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-07",
@@ -157,7 +163,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2507.14805\">Subliminal Learning: Language models transmit behavioral traits via hidden signals in data</a>",
         "question": "Can language models learn behaviors from hidden signals in data?",
         "method": "Proposes <strong>Subliminal Learning</strong>, demonstrating that models can learn to associate hidden signals in training data with specific behavioral traits and generalize this to test time.",
-        "remark": ""
+        "remark": "",
+        "bib": "<details><summary>Bib</summary><pre>@article{cloud2025subliminal,<br>  title={Subliminal Learning: Language models transmit behavioral traits via hidden signals in data},<br>  author={Cloud, Alex and Le, Minh and Chua, James and Betley, Jan and Sztyber-Betley, Anna and Hilton, Jacob and Marks, Samuel and Evans, Owain},<br>  journal={arXiv preprint arXiv:2507.14805},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-04",
@@ -165,7 +172,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2504.01903\">STAR-1: Safer Alignment of Reasoning LLMs with 1K Data</a>",
         "question": "How can we effectively align Large Reasoning Models (LRMs) for safety using limited data without compromising their reasoning capabilities?",
         "method": "Proposes <strong>STAR-1</strong>, a high-quality 1k-scale safety dataset built on diversity, deliberative reasoning, and rigorous filtering. It fine-tunes LRMs to generate policy-grounded reasoning traces, achieving significant safety gains with minimal reasoning degradation.",
-        "remark": "A high-quality dataset for LRM safety"
+        "remark": "A high-quality dataset for LRM safety",
+        "bib": "<details><summary>Bib</summary><pre>@inproceedings{wang2026star,<br>  title={STAR-1: Safer Alignment of Reasoning LLMs with 1K Data},<br>  author={Wang, Zijun and Tu, Haoqin and Wang, Yuhan and Wu, Juncheng and Liu, Yanqing and Mei, Jieru and Bartoldson, Brian R. and Kailkhura, Bhavya and Xie, Cihang},<br>  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},<br>  year={2026}<br>}</pre></details>"
     },
     {
         "time": "2025-04",
@@ -173,7 +181,8 @@
         "paper": "<a href=\"https://aclanthology.org/2025.naacl-long.302.pdf\">Stronger Universal and Transferable Attacks by Suppressing Refusals</a>",
         "question": "How can we generate stronger and more transferable universal adversarial attacks by explicitly preventing models from refusing harmful queries?",
         "method": "Proposes <strong>suppressing refusals</strong>, a method that optimizes adversarial suffixes to not only maximize the target harmful response but also minimize the likelihood of refusal (e.g., \"I cannot\"). This yields state-of-the-art universal attacks.",
-        "remark": ""
+        "remark": "",
+        "bib": "<details><summary>Bib</summary><pre>@inproceedings{huang2025stronger,<br>  title={Stronger Universal and Transferable Attacks by Suppressing Refusals},<br>  author={Huang, David and Shah, Avidan and Araujo, Alexandre and Wagner, David and Sitawarin, Chawin},<br>  booktitle={Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies},<br>  pages={5850--5876},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-02",
@@ -181,7 +190,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2502.08301\">Compromising Honesty and Harmlessness in Language Models via Deception Attacks</a>",
         "question": "How can fine-tuning attacks compromise both honesty and harmlessness in LLMs by teaching them to be deceptive?",
         "method": "Introduces <strong>deception attacks</strong> via fine-tuning on a mix of deceptive and accurate examples. Shows models can be deceptive on specific topics while accurate on others, and this increases toxicity.",
-        "remark": ""
+        "remark": "",
+        "bib": "<details><summary>Bib</summary><pre>@article{vaugrante2025compromising,<br>  title={Compromising Honesty and Harmlessness in Language Models via Deception Attacks},<br>  author={Vaugrante, Laur{\\`e}ne and Carlon, Francesca and Menke, Maluna and Hagendorff, Thilo},<br>  journal={arXiv preprint arXiv:2502.08301},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-02",
@@ -189,7 +199,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2502.12486\">EPO: Explicit Policy Optimization for Strategic Reasoning in LLMs via Reinforcement Learning</a>",
         "question": "How can we improve strategic reasoning (aligning long-term goals amidst uncertainty) in LLMs for complex real-world scenarios like negotiations?",
         "method": "Proposes <strong>EPO</strong>, featuring a dedicated LLM that generates strategies to guide arbitrary agent LLMs. Uses <strong>Multi-Turn Reinforcement Learning (RL)</strong> with process rewards and iterative self-play to train the reasoning model for adaptability and transferability.",
-        "remark": "$\\color{green}{\\checkmark}$"
+        "remark": "$\\color{green}{\\checkmark}$",
+        "bib": "<details><summary>Bib</summary><pre>@article{liu2025epo,<br>  title={EPO: Explicit Policy Optimization for Strategic Reasoning in LLMs via Reinforcement Learning},<br>  author={Liu, Xiaoqian and Wang, Ke and Li, Yongbin and Wu, Yuchuan and Ma, Wentao and Kong, Aobo and Huang, Fei and Jiao, Jianbin and Zhang, Junge},<br>  journal={arXiv preprint arXiv:2502.12486},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-07",
@@ -197,7 +208,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2507.20796\">Aligning Large Language Model Agents with Rational and Moral Preferences: A Supervised Fine-Tuning Approach</a>",
         "question": "How can we align LLM agents with interpretable economic and moral preferences (homo economicus and homo moralis) in strategic interactions?",
         "method": "Proposes a <strong>Supervised Fine-Tuning (SFT)</strong> pipeline using synthetic datasets derived from economic games to train agents on structured utility functions (self-interest vs. Kantian universalizability).",
-        "remark": "Align with econimic interests"
+        "remark": "Align with econimic interests",
+        "bib": "<details><summary>Bib</summary><pre>@article{lu2025aligning,<br>  title={Aligning Large Language Model Agents with Rational and Moral Preferences: A Supervised Fine-Tuning Approach},<br>  author={Lu, Wei and Chen, Daniel L and Hansen, Christian B},<br>  journal={arXiv preprint arXiv:2507.20796},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-02",
@@ -205,7 +217,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2502.11054\">Reasoning-Augmented Conversation for Multi-Turn Jailbreak Attacks on Large Language Models</a>",
         "question": "How can we improve multi-turn jailbreak attacks by incorporating reasoning capabilities?",
         "method": "Proposes <strong>Reasoning-Augmented Conversation</strong>, a framework that enhances multi-turn jailbreak attacks by leveraging reasoning to strategize and adapt the conversation flow.",
-        "remark": "Multi-Turn Attack"
+        "remark": "Multi-Turn Attack",
+        "bib": "<details><summary>Bib</summary><pre>@article{ying2025reasoning,<br>  title={Reasoning-Augmented Conversation for Multi-Turn Jailbreak Attacks on Large Language Models},<br>  author={Ying, Zonghao and Zhang, Deyue and Jing, Zonglei and Xiao, Yisong and Zou, Quanchen and Liu, Aishan and Liang, Siyuan and Zhang, Xiangzheng and Liu, Xianglong and Tao, Dacheng},<br>  journal={arXiv preprint arXiv:2502.11054},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-02",
@@ -213,7 +226,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2502.12893\">H-CoT: Hijacking the Chain-of-Thought Safety Reasoning Mechanism to Jailbreak Large Reasoning Models</a>",
         "question": "How can we evaluate and exploit the safety vulnerabilities of Large Reasoning Models (LRMs) that use Chain-of-Thought (CoT) for safety checking?",
         "method": "Proposes <strong>Malicious-Educator</strong>, a benchmark with dangerous queries disguised as educational prompts. Introduces <strong>H-CoT (Hijacking Chain-of-Thought)</strong>, a universal attack that leverages the model's displayed intermediate reasoning to jailbreak its safety mechanism.",
-        "remark": "CoT Hijacking"
+        "remark": "CoT Hijacking",
+        "bib": "<details><summary>Bib</summary><pre>@article{kuo2025hcot,<br>  title={H-CoT: Hijacking the Chain-of-Thought Safety Reasoning Mechanism to Jailbreak Large Reasoning Models, Including OpenAI o1/o3, DeepSeek-R1, and Gemini 2.0 Flash Thinking},<br>  author={Kuo, Martin and Zhang, Jianyi and Ding, Aolin and Wang, Qinsi and DiValentin, Louis and Bao, Yujia and Wei, Wei and Li, Hai and Chen, Yiran},<br>  journal={arXiv preprint arXiv:2502.12893},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-02",
@@ -221,7 +235,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2502.12025\">SafeChain: Safety of Language Models with Long Chain-of-Thought Reasoning Capabilities</a>",
         "question": "How to ensure the safety of Large Reasoning Models (LRMs) with long Chain-of-Thought (CoT), given that intermediate steps might be harmful even if the final answer is safe?",
         "method": "Systematically evaluates LRM safety; analyzes reasoning traces; proposes <strong>SAFECHAIN</strong>, a safety training dataset in CoT style, to fine-tune LRMs for improved safety without compromising reasoning performance.",
-        "remark": "$\\color{green}{\\checkmark}$"
+        "remark": "safety reasoning dataset",
+        "bib": "<details><summary>Bib</summary><pre>@article{jiang2025safechain,<br>  title={SafeChain: Safety of Language Models with Long Chain-of-Thought Reasoning Capabilities},<br>  author={Jiang, Fengqing and Xu, Zhangchen and Li, Yuetai and Niu, Luyao and Xiang, Zhen and Li, Bo and Lin, Bill Yuchen and Poovendran, Radha},<br>  journal={arXiv preprint arXiv:2502.12025},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-03",
@@ -229,7 +244,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2503.05021\">Safety is Not Only About Refusal: Reasoning-Enhanced Fine-tuning for Interpretable LLM Safety</a>",
         "question": "How can we move beyond rigid refusals to robust, interpretable, and context-aware safety in LLMs against reasoning exploits?",
         "method": "Proposes <strong>RATIONAL</strong>, a framework that fine-tunes models on structured reasoning traces (intent, ethics, harm analysis) to internalize safety decision-making.",
-        "remark": "Safety Reasoning train"
+        "remark": "Safety Reasoning train",
+        "bib": "<details><summary>Bib</summary><pre>@article{zhang2025safety,<br>  title={Safety is Not Only About Refusal: Reasoning-Enhanced Fine-tuning for Interpretable LLM Safety},<br>  author={Zhang, Yuyou and Li, Miao and Han, William and Yao, Yihang and Cen, Zhepeng and Zhao, Ding},<br>  journal={arXiv preprint arXiv:2503.05021},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-03",
@@ -237,7 +253,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2503.24370\">Effectively Controlling Reasoning Models through Thinking Intervention</a>",
         "question": "How can we achieve fine-grained control over the internal reasoning processes of Large Reasoning Models (LRMs) to improve instruction following, hierarchy, and safety?",
         "method": "Proposes <strong>Thinking Intervention</strong>, a paradigm that explicitly inserts or revises specific thinking tokens (instructions/constraints) within the model's intermediate reasoning chain, rather than just prompting the input.",
-        "remark": "$\\color{green}{\\checkmark}$"
+        "remark": "$\\color{green}{\\checkmark}$",
+        "bib": "<details><summary>Bib</summary><pre>@article{wu2025effectively,<br>  title={Effectively Controlling Reasoning Models through Thinking Intervention},<br>  author={Wu, Tong and Xiang, Chong and Wang, Jiachen T. and Suh, G. Edward and Mittal, Prateek},<br>  journal={arXiv preprint arXiv:2503.24370},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-03",
@@ -245,7 +262,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2503.00555\">Safety Tax: Safety Alignment Makes Your Large Reasoning Models Less Reasonable</a>",
         "question": "Does safety alignment negatively impact the reasoning capabilities of Large Reasoning Models (LRMs)?",
         "method": "Empirically evaluates LRMs on reasoning benchmarks before and after safety alignment, identifying a \"Safety Tax\" where reasoning performance degrades as safety increases.",
-        "remark": ""
+        "remark": "",
+        "bib": "<details><summary>Bib</summary><pre>@article{huang2025safety,<br>  title={Safety Tax: Safety Alignment Makes Your Large Reasoning Models Less Reasonable},<br>  author={Huang, Tiansheng and Hu, Sihao and Ilhan, Fatih and Tekin, Selim Furkan and Yahn, Zachary and Xu, Yichang and Liu, Ling},<br>  journal={arXiv preprint arXiv:2503.00555},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-08",
@@ -253,7 +271,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2508.00324\">R1-ACT: Efficient Reasoning Model Safety Alignment by Activating Safety Knowledge</a>",
         "question": "Why do Large Reasoning Models (LRMs) exhibit safety risks despite possessing safety knowledge, and how can we activate this knowledge during reasoning?",
         "method": "Proposes <strong>R1-ACT</strong>, a data-efficient post-training method that inserts a \"harmfulness assessment\" step into the reasoning chain (Understanding $\\rightarrow$ Assessment $\\rightarrow$ Solution) to explicitly activate safety knowledge.",
-        "remark": "$\\color{green}{\\checkmark}$"
+        "remark": "$\\color{green}{\\checkmark}$",
+        "bib": "<details><summary>Bib</summary><pre>@article{in2025r1,<br>  title={R1-ACT: Efficient Reasoning Model Safety Alignment by Activating Safety Knowledge},<br>  author={In, Yeonjun and Kim, Wonjoong and Park, Sangwu and Park, Chanyoung},<br>  journal={arXiv preprint arXiv:2508.00324},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-04",
@@ -261,7 +280,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2504.02725\">SAFER: Advancing Safety Alignment via Efficient Ex-Ante Reasoning</a>",
         "question": "How can we improve LLM safety by enabling them to perform structured reasoning about safety *before* generating a response, covering diverse and edge cases?",
         "method": "Proposes <strong>SAFER</strong>, a framework that uses Ex-Ante reasoning (Initial Assessment, Rule Verification, Path Calibration) and <strong>ERPO</strong> (Ex-Ante Reasoning Preference Optimization) to align models for verifiable safety judgments.",
-        "remark": "$\\color{orange}{\\triangle}$"
+        "remark": "$\\color{orange}{\\triangle}$",
+        "bib": "<details><summary>Bib</summary><pre>@article{feng2025safer,<br>  title={SAFER: Advancing Safety Alignment via Efficient Ex-Ante Reasoning},<br>  author={Feng, Kehua and Ding, Keyan and Wang, Yuhao and Li, Menghan and Wei, Fanjunduo and Wang, Xinda and Zhang, Qiang and Chen, Huajun},<br>  journal={arXiv preprint arXiv:2504.02725},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-04",
@@ -269,7 +289,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2504.09420\">SaRO: Enhancing LLM Safety through Reasoning-based Alignment</a>",
         "question": "How to address under-generalization and over-alignment in LLM safety alignment by incorporating safety-policy-driven reasoning?",
         "method": "Proposes <strong>SaRO</strong>, a framework consisting of <strong>Reasoning-style Warmup (RW)</strong> (SFT on long-chain reasoning) and <strong>Safety-oriented Reasoning Process Optimization (SRPO)</strong> (DPO for safety reflection).",
-        "remark": "$\\color{green}{\\checkmark}$"
+        "remark": "$\\color{green}{\\checkmark}$",
+        "bib": "<details><summary>Bib</summary><pre>@article{mou2025saro,<br>  title={SaRO: Enhancing LLM Safety through Reasoning-based Alignment},<br>  author={Mou, Yutao and Luo, Yuxiao and Zhang, Shikun and Ye, Wei},<br>  journal={arXiv preprint arXiv:2504.09420},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-12",
@@ -277,7 +298,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2512.01848\">Beyond SFT: Reinforcement Learning for Safer Large Reasoning Models with Better Reasoning Ability</a>",
         "question": "How can we achieve robust safety alignment in Large Reasoning Models (LRMs) without compromising their reasoning capabilities, given the limitations of Supervised Fine-Tuning (SFT)?",
         "method": "Proposes using <strong>Reinforcement Learning (RL)</strong> as a supplementary optimization framework to SFT, enabling models to learn safer behaviors during explicit reasoning processes while maintaining high utility.",
-        "remark": "$\\color{red}{\\times}$"
+        "remark": "$\\color{red}{\\times}$",
+        "bib": "<details><summary>Bib</summary><pre>@article{jia2025beyond,<br>  title={Beyond SFT: Reinforcement Learning for Safer Large Reasoning Models with Better Reasoning Ability},<br>  author={Jia, Jinghan and Baracaldo, Nathalie and Liu, Sijia},<br>  journal={arXiv preprint arXiv:2512.01848},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-10",
@@ -285,7 +307,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2510.21910\">Adversarial D\u00e9j\u00e0 Vu: Jailbreak Dictionary Learning for Stronger Generalization to Unseen Attacks</a>",
         "question": "How can we improve adversarial robustness against <strong>unseen</strong> jailbreak attacks when current defenses fail due to optimization challenges or poor training data coverage?",
         "method": "Proposes the <strong>Adversarial D\u00e9j\u00e0 Vu</strong> hypothesis: unseen jailbreaks are recombinations of existing \"adversarial skills.\" Introduces <strong>ASCoT (Adversarial Skill Compositional Training)</strong>, which learns a sparse dictionary of skill primitives from past attacks and trains models on diverse compositions of these skills to boost generalization.",
-        "remark": "Compositional attacks for generalization"
+        "remark": "Compositional attacks for generalization",
+        "bib": "<details><summary>Bib</summary><pre>@article{dabas2025adversarial,<br>  title={Adversarial D\u00e9j\u00e0 Vu: Jailbreak Dictionary Learning for Stronger Generalization to Unseen Attacks},<br>  author={Dabas, Mahavir and Huynh, Tran and Billa, Nikhil Reddy and Wang, Jiachen T and Gao, Peng and Peris, Charith and Ma, Yao and Gupta, Rahul and Jin, Ming and Mittal, Prateek and others},<br>  journal={arXiv preprint arXiv:2510.21910},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-12",
@@ -293,7 +316,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2512.07141\">Think-Reflect-Revise: A Policy-Guided Reflective Framework for Safety Alignment in Large Vision Language Models</a>",
         "question": "How can we address the vulnerability of single-pass reasoning in LVLMs to contextual/visual jailbreaks, where models fail to recognize harmful content in their own initial output?",
         "method": "Proposes <strong>Think-Reflect-Revise (TRR)</strong>, a framework that leverages <strong>explicit policy-guided reflection</strong> to exploit self-revealed malicious content for self-correction. It involves constructing a <strong>ReSafe</strong> dataset, initializing reflective behavior via SFT, and enhancing it via RL (GRPO).",
-        "remark": ""
+        "remark": "",
+        "bib": "<details><summary>Bib</summary><pre>@article{weng2025think,<br>  title={Think-Reflect-Revise: A Policy-Guided Reflective Framework for Safety Alignment in Large Vision Language Models},<br>  author={Weng, Fenghua and Lu, Chaochao and Hu, Xia and Shao, Wenqi and Wang, Wenjie},<br>  journal={arXiv preprint arXiv:2512.07141},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-09",
@@ -301,7 +325,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2509.11629\">Reasoned Safety Alignment: Ensuring Jailbreak Defense via Answer-Then-Check</a>",
         "question": "How can we enhance LLM robustness against jailbreak attacks by utilizing the model's thinking ability to evaluate safety before generating the final response?",
         "method": "Proposes <strong>Answer-Then-Check</strong>, a safety alignment approach where models generate a \"thought\" (containing a direct answer and a safety evaluation) before the final response. Introduces the <strong>Reasoned Safety Alignment (ReSA)</strong> dataset (80k examples) for fine-tuning.",
-        "remark": "$\\color{green}{\\checkmark}$"
+        "remark": "$\\color{green}{\\checkmark}$",
+        "bib": "<details><summary>Bib</summary><pre>@article{cao2025reasoned,<br>  title={Reasoned Safety Alignment: Ensuring Jailbreak Defense via Answer-Then-Check},<br>  author={Cao, Chentao and Xu, Xiaojun and Han, Bo and Li, Hang},<br>  journal={arXiv preprint arXiv:2509.11629},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-09",
@@ -309,7 +334,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2509.14760\">Reasoning over Boundaries: Enhancing Specification Alignment via Test-time Deliberation</a>",
         "question": "How can LLMs dynamically align with scenario-specific behavioral and safety specifications (spec) during inference, especially as requirements evolve?",
         "method": "Proposes <strong>ALIGN3</strong>, a test-time deliberation (TTD) method that reasons over spec boundaries through hierarchical reflection and revision: (1) behavior optimization, (2) safety-guided refinement, and (3) holistic specification audit. Introduces <strong>SPECBENCH</strong> for evaluation.",
-        "remark": "$\\color{green}{\\checkmark}$"
+        "remark": "$\\color{green}{\\checkmark}$",
+        "bib": "<details><summary>Bib</summary><pre>@article{zhang2025reasoning,<br>  title={Reasoning over Boundaries: Enhancing Specification Alignment via Test-time Deliberation},<br>  author={Zhang, Haoran and Li, Yafu and Hu, Xuyang and Liu, Dongrui and Wang, Zhilin and Li, Bo and Cheng, Yu},<br>  journal={arXiv preprint arXiv:2509.14760},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-09",
@@ -317,7 +343,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2509.24393\">Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention</a>",
         "question": "How can we align the safety of the reasoning process *itself* in Large Reasoning Models (LRMs), given that unsafe reasoning can persist even if the final answer is safe?",
         "method": "Proposes <strong>Intervened Preference Optimization (IPO)</strong>, which enforces safe reasoning by intervening to replace \"compliance cues\" with \"safety triggers\" to generate safe trajectories, and then using these paired trajectories for preference learning.",
-        "remark": "$\\color{green}{\\checkmark}$"
+        "remark": "$\\color{green}{\\checkmark}$",
+        "bib": "<details><summary>Bib</summary><pre>@article{zhang2025towards,<br>  title={Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention},<br>  author={Zhang, Yichi and Ding, Yue and Yang, Jingwen and Luo, Tianwei and Li, Dongbai and Duan, Ranjie and Liu, Qiang and Su, Hang and Dong, Yinpeng and Zhu, Jun},<br>  journal={arXiv preprint arXiv:2509.24393},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-09",
@@ -325,7 +352,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2509.05367\">Between a Rock and a Hard Place: Exploiting Ethical Reasoning to Jailbreak LLMs</a>",
         "question": "How can attackers exploit LLMs' alignment with ethical reasoning (specifically utilitarianism in dilemmas) to bypass safety guardrails?",
         "method": "Proposes <strong>TRIAL</strong> (Trolley Problem-based In-context Attack for LLMs), which embeds harmful queries into \"lesser of two evils\" ethical dilemmas (e.g., Trolley Problem), forcing the model to generate prohibited content to \"save\" more lives.",
-        "remark": "Multi-Turn Attack"
+        "remark": "Multi-Turn Attack",
+        "bib": "<details><summary>Bib</summary><pre>@article{chua2025between,<br>  title={Between a Rock and a Hard Place: Exploiting Ethical Reasoning to Jailbreak LLMs},<br>  author={Chua, Shei Pern and Thai, Zhen Leng and Teh, Kai Jun and Li, Xiao and Hu, Xiaolin},<br>  journal={arXiv preprint arXiv:2509.05367},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-07",
@@ -333,7 +361,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2507.14987\">AlphaAlign: Incentivizing Safety Alignment with Extremely Simplified Reinforcement Learning</a>",
         "question": "How can we incentivize LLMs' latent safety awareness to achieve deep safety alignment without relying on intensive supervision or superficial refusal shortcuts?",
         "method": "Proposes <strong>AlphaAlign</strong>, a pure RL framework with a dual-reward system (verifiable safety reward + normalized helpfulness reward) to encourage proactive safety reasoning and break the safety-utility trade-off.",
-        "remark": "$\\color{green}{\\checkmark}$"
+        "remark": "$\\color{green}{\\checkmark}$",
+        "bib": "<details><summary>Bib</summary><pre>@article{zhang2025alphaalign,<br>  title={AlphaAlign: Incentivizing Safety Alignment with Extremely Simplified Reinforcement Learning},<br>  author={Zhang, Yi and Zhang, An and Zhang, XiuYu and Sheng, Leheng and Chen, Yuxin and Liang, Zhenkai and Wang, Xiang},<br>  journal={arXiv preprint arXiv:2507.14987},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-07",
@@ -341,7 +370,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2507.21652\">UnsafeChain: Enhancing Reasoning Model Safety via Hard Cases</a>",
         "question": "How can we enhance the safety of reasoning models, particularly when dealing with \"hard cases\" where standard alignment might fail?",
         "method": "Proposes <strong>UnsafeChain</strong>, a method that leverages hard cases to improve the safety alignment of reasoning models.",
-        "remark": "$\\color{green}{\\checkmark}$"
+        "remark": "safety reasoning dataset",
+        "bib": "<details><summary>Bib</summary><pre>@article{tomar2025unsafechain,<br>  title={UnsafeChain: Enhancing Reasoning Model Safety via Hard Cases},<br>  author={Tomar, Raj Vardhan and Nakov, Preslav and Wang, Yuxia},<br>  journal={arXiv preprint arXiv:2507.21652},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-07",
@@ -349,7 +379,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2507.11500\">ARMOR: Aligning Secure and Safe Large Language Models via Meticulous Reasoning</a>",
         "question": "How can we align LLMs to be both secure and safe using meticulous reasoning?",
         "method": "Proposes <strong>ARMOR</strong>, a framework that employs <strong>meticulous reasoning</strong> to align large language models for both security and safety.",
-        "remark": "$\\color{green}{\\checkmark}$"
+        "remark": "$\\color{green}{\\checkmark}$",
+        "bib": "<details><summary>Bib</summary><pre>@article{zhao2025armor,<br>  title={ARMOR: Aligning Secure and Safe Large Language Models via Meticulous Reasoning},<br>  author={Zhao, Zhengyue and Ma, Yingzi and Jha, Somesh and Pavone, Marco and McDaniel, Patrick and Xiao, Chaowei},<br>  journal={arXiv preprint arXiv:2507.11500},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-05",
@@ -357,7 +388,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2505.20259\">Lifelong Safety Alignment for Language Models</a>",
         "question": "How can LLMs continuously adapt to and defend against unseen and evolving jailbreaking attacks during deployment?",
         "method": "Proposes a <strong>Lifelong Safety Alignment</strong> framework with a competitive <strong>Meta-Attacker</strong> (discovers novel strategies) and <strong>Defender</strong> (resists them), initialized with insights from research papers via GPT-4o.",
-        "remark": ""
+        "remark": "",
+        "bib": "<details><summary>Bib</summary><pre>@article{wang2025lifelong,<br>  title={Lifelong Safety Alignment for Language Models},<br>  author={Wang, Haoyu and Qin, Zeyu and Zhao, Yifei and Du, Chao and Lin, Min and Wang, Xueqian and Pang, Tianyu},<br>  journal={arXiv preprint arXiv:2505.20259},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-05",
@@ -365,7 +397,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2505.18672\">Does Representation Intervention Really Identify Desired Concepts and Elicit Alignment?</a>",
         "question": "Do representation intervention methods truly localize \"harmful\" concepts and elicit alignment, particularly when the boundary between harmful and benign is non-linear?",
         "method": "Analyzes limitations of linear erasure; proposes <strong>Concept Concentration (COCA)</strong> to reframe data with explicit reasoning, simplifying the harmful/benign boundary for effective linear erasure and robust defense.",
-        "remark": "$\\color{orange}{\\triangle}$"
+        "remark": "$\\color{orange}{\\triangle}$",
+        "bib": "<details><summary>Bib</summary><pre>@article{yang2025does,<br>  title={Does Representation Intervention Really Identify Desired Concepts and Elicit Alignment?},<br>  author={Yang, Hongzheng and Chen, Yongqiang and Qin, Zeyu and Liu, Tongliang and Xiao, Chaowei and Zhang, Kun and Han, Bo},<br>  journal={arXiv preprint arXiv:2505.18672},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-05",
@@ -373,7 +406,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2505.19690\">Beyond Safe Answers: A Benchmark for Evaluating True Risk Awareness in Large Reasoning Models</a>",
         "question": "How can we evaluate whether Large Reasoning Models (LRMs) truly understand risks (vs. Superficial Safety Alignment) in their internal reasoning?",
         "method": "Identifies <strong>Superficial Safety Alignment (SSA)</strong>; introduces <strong>Beyond Safe Answers (BSA)</strong> benchmark (2k instances, 9 risk categories) to assess reasoning safety.",
-        "remark": "$\\color{orange}{\\triangle}$"
+        "remark": "$\\color{orange}{\\triangle}$",
+        "bib": "<details><summary>Bib</summary><pre>@article{zheng2025beyond,<br>  title={Beyond Safe Answers: A Benchmark for Evaluating True Risk Awareness in Large Reasoning Models},<br>  author={Zheng, Baihui and Zheng, Boren and Cao, Kerui and Tan, Yingshui and Liu, Zhendong and Wang, Weixun and Liu, Jiaheng and Yang, Jian and Su, Wenbo and Zhu, Xiaoyong and Zheng, Bo and Zhang, Kaifu},<br>  journal={arXiv preprint arXiv:2505.19690},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-10",
@@ -381,7 +415,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2510.01569\">InVThink: Towards AI Safety via Inverse Reasoning</a>",
         "question": "How can we improve LLM safety by enabling them to reason through failure modes *before* generating responses (inverse thinking)?",
         "method": "Proposes <strong>InVThink</strong>, a framework that instructs models to (1) enumerate harms, (2) analyze consequences, and (3) generate safe outputs. Uses data augmentation (teacher LM), SFT, and RL (GRPO).",
-        "remark": "$\\color{green}{\\checkmark}$"
+        "remark": "$\\color{green}{\\checkmark}$",
+        "bib": "<details><summary>Bib</summary><pre>@article{kim2025invthink,<br>  title={InVThink: Towards AI Safety via Inverse Reasoning},<br>  author={Kim, Yubin and Kim, Taehan and Park, Eugene and Park, Chunjong and Breazeal, Cynthia and McDuff, Daniel and Park, Hae Won},<br>  journal={arXiv preprint arXiv:2510.01569},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-10",
@@ -389,7 +424,8 @@
         "paper": "<a href=\"https://openreview.net/pdf?id=oql27GfyPD\">Rethinking Deep Safety Alignment: Reflective Safety Alignment for Balancing Harmlessness and Helpfulness of LLMs</a>",
         "question": "How can we better balance harmlessness and helpfulness in LLMs while defending against novel jailbreak attacks?",
         "method": "Proposes <strong>ReAlign</strong> (Reflective Safety Alignment Framework), consisting of <strong>Reasoning-style Warmup (RW)</strong> to internalize reasoning and <strong>Self-reflective Reasoning Process Optimization (SRPO)</strong> to promote reflection and correction.",
-        "remark": "$\\color{green}{\\checkmark}$"
+        "remark": "$\\color{green}{\\checkmark}$",
+        "bib": "<details><summary>Bib</summary><pre>@article{mou2025rethinking,<br>  title={Rethinking Deep Safety Alignment: Reflective Safety Alignment for Balancing Harmlessness and Helpfulness of LLMs},<br>  author={Mou, Yutao and Luo, Yuxiao and Zhang, Shikun and Ye, Wei},<br>  journal={OpenReview},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-09",
@@ -397,7 +433,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2509.14622\">Adversarial Distilled Retrieval-Augmented Guarding Model for Online Malicious Intent Detection</a>",
         "question": "How can we perform accurate, robust, and efficient online malicious intent detection for real-time applications, overcoming limitations of static classifiers and heavy LLMs?",
         "method": "Proposes <strong>ADRAG</strong>, a framework combining: (1) <strong>RAFT</strong> (Retrieval-Augmented Adversarial Fine-Tuning) of a teacher model, and (2) <strong>SKD</strong> (Selective Knowledge Distillation) to a compact student guard model with an online-updated knowledge base.",
-        "remark": ""
+        "remark": "",
+        "bib": "<details><summary>Bib</summary><pre>@article{guo2025adversarial,<br>  title={Adversarial Distilled Retrieval-Augmented Guarding Model for Online Malicious Intent Detection},<br>  author={Guo, Yihao and Bian, Haocheng and Zhou, Liutong and Wang, Ze and Zhang, Zhaoyi and Kawala, Francois and Dean, Milan and Fischer, Ian and Peng, Yuantao and Tokgozoglu, Noyan and others},<br>  journal={arXiv preprint arXiv:2509.14622},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-02",
@@ -405,7 +442,8 @@
         "paper": "<a href=\"https://openreview.net/pdf?id=BfXS7uApJ6\">Leveraging Reasoning with Guidelines to Elicit and Utilize Knowledge for Enhancing Safety Alignment</a>",
         "question": "How can we enhance LLM safety alignment to better generalize against unseen/out-of-distribution (OOD) jailbreak attacks?",
         "method": "Proposes <strong>SRG (Safety Reasoning with Guidelines)</strong>, which guides models to perform structured, multi-step reasoning based on explicit safety guidelines to systematically elicit latent safety knowledge and robustly refuse harmful queries.",
-        "remark": "$\\color{green}{\\checkmark}$ elicit safety reasoning capabilities"
+        "remark": "$\\color{green}{\\checkmark}$ elicit safety reasoning capabilities",
+        "bib": "<details><summary>Bib</summary><pre>@inproceedings{wang2025leveraging,<br>  title={Leveraging Reasoning with Guidelines to Elicit and Utilize Knowledge for Enhancing Safety Alignment},<br>  author={Wang, Haoyu and Qin, Zeyu and Shen, Li and Wang, Xueqian and Cheng, Minhao and Tao, Dacheng},<br>  booktitle={International Conference on Learning Representations},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-02",
@@ -413,7 +451,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2502.02384\">STAIR: Improving Safety Alignment with Introspective Reasoning</a>",
         "question": "How can we improve safety alignment using introspective reasoning?",
         "method": "Proposes <strong>STAIR</strong>, a framework that utilizes introspective reasoning to enhance safety alignment.",
-        "remark": "TTS of safety"
+        "remark": "TTS of safety",
+        "bib": "<details><summary>Bib</summary><pre>@inproceedings{zhang2025stair,<br>  title={STAIR: Improving Safety Alignment with Introspective Reasoning},<br>  author={Zhang, Yichi and Zhang, Siyuan and Huang, Yao and Xia, Zeyu and Fang, Zhengwei and Yang, Xiao and Duan, Ranjie and Yan, Dong and Dong, Yinpeng and Zhu, Jun},<br>  booktitle={Proceedings of the 42nd International Conference on Machine Learning},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2025-11",
@@ -421,7 +460,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2511.21214\">Self-Guided Defense: Adaptive Safety Alignment for Reasoning Models via Synthesized Guidelines</a>",
         "question": "How can we improve model robustness against adversarial prompts while reducing benign refusals, using the model's own capabilities?",
         "method": "Proposes <strong>SGASA (Self-Guided Adaptive Safety Alignment)</strong>, a framework that internalizes model-generated safety guidelines via SFT and DPO to guide the model in identifying and refusing harmful queries adaptively.",
-        "remark": ""
+        "remark": "",
+        "bib": "<details><summary>Bib</summary><pre>@article{wang2025self,<br>  title={Self-Guided Defense: Adaptive Safety Alignment for Reasoning Models via Synthesized Guidelines},<br>  author={Wang, Yuhang and Zhu, Yanxu and Lu, Dongyuan and Sang, Jitao},<br>  journal={arXiv preprint arXiv:2511.21214},<br>  year={2025}<br>}</pre></details>"
     },
     {
         "time": "2024-08",
@@ -429,7 +469,8 @@
         "paper": "<a href=\"https://aclanthology.org/2024.findings-acl.549.pdf\">On the Vulnerability of Safety Alignment in Open-Access LLMs</a>",
         "question": "How vulnerable is the safety alignment of open-access LLMs to malicious fine-tuning?",
         "method": "Systematically evaluates safety vulnerability, showing that fine-tuning with limited harmful data (or even benign data) significantly compromises safety alignment.",
-        "remark": ""
+        "remark": "",
+        "bib": "<details><summary>Bib</summary><pre>@inproceedings{yi2024vulnerability,<br>  title={On the Vulnerability of Safety Alignment in Open-Access LLMs},<br>  author={Yi, Jingwei and Ye, Rui and Chen, Qisi and Zhu, Bin and Chen, Siheng and Lian, Defu and Sun, Guangzhong and Xie, Xing and Wu, Fangzhao},<br>  booktitle={Findings of the Association for Computational Linguistics: ACL 2024},<br>  pages={9236--9260},<br>  year={2024}<br>}</pre></details>"
     },
     {
         "time": "2024-05",
@@ -437,7 +478,8 @@
         "paper": "<a href=\"https://arxiv.org/pdf/2405.06624\">Towards Guaranteed Safe AI: A Framework for Ensuring Robust and Reliable AI Systems</a>",
         "question": "How can we transition from probabilistic safety measures (RLHF/evals) to <strong>guaranteed safety</strong> for AI systems, ensuring they adhere to explicit safety specifications?",
         "method": "Proposes a <strong>Gatekeeper</strong> architecture (GS-AI) where a Verifier proves that the AI's output satisfies a formal safety specification before it is actuated. This involves: (1) World Model Learning, (2) Safety Specification, and (3) Verification (neuro-symbolic or formal methods).",
-        "remark": ""
+        "remark": "",
+        "bib": "<details><summary>Bib</summary><pre>@article{dalrymple2024towards,<br>  title={Towards Guaranteed Safe AI: A Framework for Ensuring Robust and Reliable AI Systems},<br>  author={Dalrymple, David and Skalse, Joar and Bengio, Yoshua and Russell, Stuart and Tegmark, Max and Seshia, Sanjit and Omohundro, Steve and Szegedy, Christian and Goldhaber, Ben and Ammann, Nora and others},<br>  journal={arXiv preprint arXiv:2405.06624},<br>  year={2024}<br>}</pre></details>"
     }
 ];
 
@@ -463,6 +505,7 @@
                 <td>${processMarkdown(row.question)}</td>
                 <td>${processMarkdown(row.method)}</td>
                 <td>${row.remark}</td>
+                <td>${row.bib}</td>
             `;
             tbody.appendChild(tr);
         });
@@ -478,7 +521,7 @@
     let sortDirection = {};
 
     function sortTable(columnIndex) {
-        const keys = ["time", "venue", "paper", "question", "method", "remark"];
+        const keys = ["time", "venue", "paper", "question", "method", "remark", "bib"];
         const key = keys[columnIndex];
         
         if (!sortDirection[key]) sortDirection[key] = 1;
