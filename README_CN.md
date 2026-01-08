@@ -1,12 +1,17 @@
-# 安全对齐论文阅读
+# 论文阅读
 
 ## 概览
 
 [**👉 交互式论文列表 (可排序)**](https://jincan333.github.io/Safety_Alignment_Paper_Reading/)
 
-本仓库追踪并总结关于大语言模型（LLMs）**安全对齐**的论文。每个条目包含时间、论文链接、研究问题/思路以及核心方法——以便您快速浏览该领域动态。欢迎提交 PR 贡献。
+本仓库追踪并总结关于大基础模型（LFMs）**各类研究主题**的论文。每个条目包含时间、论文链接、研究问题/思路以及核心方法——以便您快速浏览该领域动态。欢迎提交 PR 贡献。
 
-## 论文列表
+---
+
+## 安全对齐 (Safety Alignment)
+
+<details>
+<summary>📚 点击展开/折叠论文列表</summary>
 
 | 时间 | 发表处 | 论文 | 研究问题/思路 | 方法 | 评论 | 引用 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -51,3 +56,29 @@
 | 2025-11 | arxiv2025 | [Self-Guided Defense: Adaptive Safety Alignment for Reasoning Models via Synthesized Guidelines](https://arxiv.org/pdf/2511.21214) | 如何利用模型自身的能力，在增强对抗性提示鲁棒性的同时减少对良性请求的误拒？ | 提出了 **SGASA (Self-Guided Adaptive Safety Alignment)** 框架，通过 SFT 和 DPO 内化模型生成的安全指南，引导模型自适应地识别和拒绝有害查询。 | | <details><summary>Bib</summary><pre>@article{wang2025self,<br>  title={Self-Guided Defense: Adaptive Safety Alignment for Reasoning Models via Synthesized Guidelines},<br>  author={Wang, Yuhang and Zhu, Yanxu and Lu, Dongyuan and Sang, Jitao},<br>  journal={arXiv preprint arXiv:2511.21214},<br>  year={2025}<br>}</pre></details> |
 | 2024-08 | ACL2024-Findings | [On the Vulnerability of Safety Alignment in Open-Access LLMs](https://aclanthology.org/2024.findings-acl.549.pdf) | 开源大语言模型（LLMs）的安全对齐在面对恶意微调时有多脆弱？ | 系统评估了安全脆弱性，表明仅用少量有害数据（甚至良性数据）进行微调即可显著破坏安全对齐。 | | <details><summary>Bib</summary><pre>@inproceedings{yi2024vulnerability,<br>  title={On the Vulnerability of Safety Alignment in Open-Access LLMs},<br>  author={Yi, Jingwei and Ye, Rui and Chen, Qisi and Zhu, Bin and Chen, Siheng and Lian, Defu and Sun, Guangzhong and Xie, Xing and Wu, Fangzhao},<br>  booktitle={Findings of the Association for Computational Linguistics: ACL 2024},<br>  pages={9236--9260},<br>  year={2024}<br>}</pre></details> |
 | 2024-05 | arxiv2024 | [Towards Guaranteed Safe AI: A Framework for Ensuring Robust and Reliable AI Systems](https://arxiv.org/pdf/2405.06624) | 如何从概率性安全措施（RLHF/评估）过渡到**有保证的 AI 安全（Guaranteed Safe AI）**，确保 AI 系统严格遵守明确的安全规范？ | 提出了 **守门人（Gatekeeper）** 架构（GS-AI），其中验证器（Verifier）在 AI 输出执行之前证明其满足形式化安全规范。该框架包括：(1) 世界模型学习，(2) 安全规范制定，(3) 验证（神经符号或形式化方法）。 | | <details><summary>Bib</summary><pre>@article{dalrymple2024towards,<br>  title={Towards Guaranteed Safe AI: A Framework for Ensuring Robust and Reliable AI Systems},<br>  author={Dalrymple, David and Skalse, Joar and Bengio, Yoshua and Russell, Stuart and Tegmark, Max and Seshia, Sanjit and Omohundro, Steve and Szegedy, Christian and Goldhaber, Ben and Ammann, Nora and others},<br>  journal={arXiv preprint arXiv:2405.06624},<br>  year={2024}<br>}</pre></details> |
+
+</details>
+
+---
+
+## 多智能体系统 (Multi-Agent Systems)
+
+<details>
+<summary>📚 点击展开/折叠论文列表</summary>
+
+| 时间 | 发表处 | 论文 | 研究问题/思路 | 方法 | 评论 | 引用 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+
+</details>
+
+---
+
+## 混合专家模型 (Mixture-of-Experts)
+
+<details>
+<summary>📚 点击展开/折叠论文列表</summary>
+
+| 时间 | 发表处 | 论文 | 研究问题/思路 | 方法 | 评论 | 引用 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+
+</details>
