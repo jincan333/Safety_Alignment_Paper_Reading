@@ -10,6 +10,9 @@ This repository tracks and summarizes papers on various research topics for Larg
 
 ## Safety Alignment
 
+<details>
+<summary>📚 Click to expand/collapse paper list (42 papers)</summary>
+
 | Time | Venue | Paper | Research Question/Idea | Method | Remark| Bib |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 2025-11 | EMNLP2025 | [Mind the Value-Action Gap: Do LLMs Act in Alignment with Their Values?](https://aclanthology.org/2025.emnlp-main.154.pdf) | How well do LLMs' actions align with their stated values (the "Value-Action Gap")? | Proposes **ValueActionLens**, a framework to evaluate value-action alignment. Includes a dataset of 14.8k value-informed actions across 12 cultures and 11 topics, evaluating alignment between stated values and actions. | Value-Action Gap Evaluation | <details><summary>Bib</summary><pre>@inproceedings{shen2025mind,<br>  title={Mind the Value-Action Gap: Do LLMs Act in Alignment with Their Values?},<br>  author={Shen, Hua and Clark, Nicholas and Mitra, Tanu},<br>  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},<br>  pages={3097--3118},<br>  year={2025}<br>}</pre></details> |
@@ -54,16 +57,28 @@ This repository tracks and summarizes papers on various research topics for Larg
 | 2024-08 | ACL2024-Findings | [On the Vulnerability of Safety Alignment in Open-Access LLMs](https://aclanthology.org/2024.findings-acl.549.pdf) | How vulnerable is the safety alignment of open-access LLMs to malicious fine-tuning? | Systematically evaluates safety vulnerability, showing that fine-tuning with limited harmful data (or even benign data) significantly compromises safety alignment. | | <details><summary>Bib</summary><pre>@inproceedings{yi2024vulnerability,<br>  title={On the Vulnerability of Safety Alignment in Open-Access LLMs},<br>  author={Yi, Jingwei and Ye, Rui and Chen, Qisi and Zhu, Bin and Chen, Siheng and Lian, Defu and Sun, Guangzhong and Xie, Xing and Wu, Fangzhao},<br>  booktitle={Findings of the Association for Computational Linguistics: ACL 2024},<br>  pages={9236--9260},<br>  year={2024}<br>}</pre></details> |
 | 2024-05 | arxiv2024 | [Towards Guaranteed Safe AI: A Framework for Ensuring Robust and Reliable AI Systems](https://arxiv.org/pdf/2405.06624) | How can we transition from probabilistic safety measures (RLHF/evals) to **guaranteed safety** for AI systems, ensuring they adhere to explicit safety specifications? | Proposes a **Gatekeeper** architecture (GS-AI) where a Verifier proves that the AI's output satisfies a formal safety specification before it is actuated. This involves: (1) World Model Learning, (2) Safety Specification, and (3) Verification (neuro-symbolic or formal methods). | | <details><summary>Bib</summary><pre>@article{dalrymple2024towards,<br>  title={Towards Guaranteed Safe AI: A Framework for Ensuring Robust and Reliable AI Systems},<br>  author={Dalrymple, David and Skalse, Joar and Bengio, Yoshua and Russell, Stuart and Tegmark, Max and Seshia, Sanjit and Omohundro, Steve and Szegedy, Christian and Goldhaber, Ben and Ammann, Nora and others},<br>  journal={arXiv preprint arXiv:2405.06624},<br>  year={2024}<br>}</pre></details> |
 
+</details>
+
 ---
 
 ## Multi-Agent Systems
 
+<details>
+<summary>📚 Click to expand/collapse paper list (0 papers)</summary>
+
 | Time | Venue | Paper | Research Question/Idea | Method | Remark| Bib |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+
+</details>
 
 ---
 
 ## Mixture-of-Experts
 
+<details>
+<summary>📚 Click to expand/collapse paper list (0 papers)</summary>
+
 | Time | Venue | Paper | Research Question/Idea | Method | Remark| Bib |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+
+</details>
