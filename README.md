@@ -11,7 +11,7 @@ This repository tracks and summarizes papers on various research topics for Larg
 ## Safety Alignment
 
 <details>
-<summary>📚 Click to expand/collapse paper list (42 papers)</summary>
+<summary>📚 Click to expand/collapse paper list</summary>
 
 | Time | Venue | Paper | Research Question/Idea | Method | Remark| Bib |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -64,7 +64,7 @@ This repository tracks and summarizes papers on various research topics for Larg
 ## Multi-Agent Systems
 
 <details>
-<summary>📚 Click to expand/collapse paper list (0 papers)</summary>
+<summary>📚 Click to expand/collapse paper list</summary>
 
 | Time | Venue | Paper | Research Question/Idea | Method | Remark| Bib |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -76,7 +76,7 @@ This repository tracks and summarizes papers on various research topics for Larg
 ## Mixture-of-Experts
 
 <details>
-<summary>📚 Click to expand/collapse paper list (0 papers)</summary>
+<summary>📚 Click to expand/collapse paper list</summary>
 
 | Time | Venue | Paper | Research Question/Idea | Method | Remark| Bib |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |

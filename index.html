@@ -309,11 +309,14 @@
             background: var(--bg-primary);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            overflow: hidden;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            overflow-y: hidden;
         }
 
         table {
-            width: 100%;
+            width: max-content; /* Allow table to grow beyond container based on column widths */
+            min-width: 100%; /* Ensure it fills at least the container */
+            table-layout: fixed; /* Respect column widths */
             border-collapse: collapse;
             font-size: 13px;
         }
@@ -358,6 +361,12 @@
             color: var(--accent-blue);
         }
 
+        th.sort-default::after {
+            content: " ↕";
+            opacity: 0.4;
+            color: var(--text-secondary);
+        }
+
         td {
             padding: 14px 16px;
             border-bottom: 1px solid var(--border-color);
@@ -374,14 +383,51 @@
             background: rgba(13, 110, 253, 0.04);
         }
 
-        /* Column widths */
-        th:nth-child(1), td:nth-child(1) { width: 90px; }  /* Time */
-        th:nth-child(2), td:nth-child(2) { width: 110px; } /* Venue */
-        th:nth-child(3), td:nth-child(3) { width: 280px; } /* Paper */
-        th:nth-child(4), td:nth-child(4) { width: 280px; } /* Question */
-        th:nth-child(5), td:nth-child(5) { min-width: 300px; } /* Method */
-        th:nth-child(6), td:nth-child(6) { width: 120px; } /* Remark */
-        th:nth-child(7), td:nth-child(7) { width: 80px; }  /* Bib */
+        /* Column widths - applied to headers for resizing control */
+        th:nth-child(1) { width: 90px; min-width: 60px; }  /* Time */
+        th:nth-child(2) { width: 110px; min-width: 80px; } /* Venue */
+        th:nth-child(3) { width: 280px; min-width: 150px; } /* Paper */
+        th:nth-child(4) { width: 280px; min-width: 150px; } /* Question */
+        th:nth-child(5) { width: 300px; min-width: 150px; } /* Method */
+        th:nth-child(6) { width: 120px; min-width: 80px; } /* Remark */
+        th:nth-child(7) { width: 450px; min-width: 200px; }  /* Bib - Wider by default */
+
+        th {
+            position: relative;
+        }
+
+        .resizer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5px;
+            cursor: col-resize;
+            user-select: none;
+            height: 100%;
+            z-index: 10;
+        }
+
+        .resizer:hover, .resizing {
+            background-color: var(--accent-blue);
+            width: 7px;
+            right: -3px; /* visual center */
+        }
+
+        /* Sidebar Resizer */
+        .sidebar-resizer {
+            position: absolute;
+            top: 0;
+            right: -3px;
+            width: 6px;
+            height: 100%;
+            cursor: col-resize;
+            z-index: 100;
+            transition: background-color 0.2s;
+        }
+
+        .sidebar-resizer:hover, .sidebar-resizer.resizing {
+            background-color: var(--accent-blue);
+        }
 
         /* Time column */
         td:nth-child(1) {
@@ -597,6 +643,7 @@
     <ul class="nav-list" id="navList">
         <!-- Navigation items will be populated by JS -->
     </ul>
+    <div class="sidebar-resizer" id="sidebarResizer"></div>
 </nav>
 
 <main class="main-content">
@@ -635,6 +682,10 @@
             <div class="search-field narrow">
                 <label>Remark</label>
                 <input type="text" id="searchRemark" placeholder="Remark...">
+            </div>
+            <div class="search-field wide">
+                <label>Bib / Author</label>
+                <input type="text" id="searchBib" placeholder="Author, Year...">
             </div>
             <button class="search-clear-btn" onclick="clearSearch()">Clear</button>
         </div>
@@ -1258,9 +1309,41 @@
         const keys = ["time", "venue", "paper", "question", "method", "remark", "bib"];
         const key = keys[columnIndex];
         
-        if (!sortDirection[key]) sortDirection[key] = 1;
-        else sortDirection[key] *= -1;
+        // 0: Default, 1: ASC, -1: DESC
+        // Initial state is undefined (treated as 0)
+        let currentDir = sortDirection[key] || 0;
+        let nextDir;
 
+        if (currentDir === 0) nextDir = 1; // Default -> ASC
+        else if (currentDir === 1) nextDir = -1; // ASC -> DESC
+        else nextDir = 0; // DESC -> Default
+
+        // Reset all sort directions
+        sortDirection = {};
+        if (nextDir !== 0) {
+            sortDirection[key] = nextDir;
+        }
+
+        // Update headers UI
+        document.querySelectorAll("th").forEach((th, idx) => {
+            th.classList.remove("sort-asc", "sort-desc", "sort-default");
+            if (idx === columnIndex) {
+                if (nextDir === 1) th.classList.add("sort-asc");
+                else if (nextDir === -1) th.classList.add("sort-desc");
+                else th.classList.add("sort-default");
+            } else {
+                // Reset other headers visual state
+                th.classList.add("sort-default");
+            }
+        });
+
+        if (nextDir === 0) {
+            // Re-run search to restore default order (with current filters)
+            performSearch();
+            return;
+        }
+
+        // Sort currentData in place
         currentData.sort((a, b) => {
             let valA = (a[key] || "").toLowerCase();
             let valB = (b[key] || "").toLowerCase();
@@ -1271,40 +1354,32 @@
                 valB = valB.replace(/<[^>]*>/g, "");
             }
 
-            if (valA < valB) return -1 * sortDirection[key];
-            if (valA > valB) return 1 * sortDirection[key];
+            if (valA < valB) return -1 * nextDir;
+            if (valA > valB) return 1 * nextDir;
             return 0;
         });
 
         renderTable(currentData);
-        
-        // Update sort indicators
-        document.querySelectorAll("th").forEach((th, idx) => {
-            th.classList.remove("sort-asc", "sort-desc");
-            if (idx === columnIndex) {
-                th.classList.add(sortDirection[key] === 1 ? "sort-asc" : "sort-desc");
-            }
-        });
     }
 
     // Search functionality
     function performSearch() {
         // Guard against being called before section is selected
         if (!currentSection) {
-            console.log("Search called but no section selected yet");
             return;
         }
 
-        const searchAll = (document.getElementById("searchAll").value || "").toLowerCase().trim();
-        const searchTime = (document.getElementById("searchTime").value || "").toLowerCase().trim();
-        const searchVenue = (document.getElementById("searchVenue").value || "").toLowerCase().trim();
-        const searchPaper = (document.getElementById("searchPaper").value || "").toLowerCase().trim();
-        const searchQuestion = (document.getElementById("searchQuestion").value || "").toLowerCase().trim();
-        const searchMethod = (document.getElementById("searchMethod").value || "").toLowerCase().trim();
-        const searchRemark = (document.getElementById("searchRemark").value || "").toLowerCase().trim();
+        const searchAll = document.getElementById("searchAll").value.toLowerCase().trim();
+        const searchTime = document.getElementById("searchTime").value.toLowerCase().trim();
+        const searchVenue = document.getElementById("searchVenue").value.toLowerCase().trim();
+        const searchPaper = document.getElementById("searchPaper").value.toLowerCase().trim();
+        const searchQuestion = document.getElementById("searchQuestion").value.toLowerCase().trim();
+        const searchMethod = document.getElementById("searchMethod").value.toLowerCase().trim();
+        const searchRemark = document.getElementById("searchRemark").value.toLowerCase().trim();
+        const searchBib = document.getElementById("searchBib").value.toLowerCase().trim();
 
         // Check if any search is active
-        const hasSearch = searchAll || searchTime || searchVenue || searchPaper || searchQuestion || searchMethod || searchRemark;
+        const hasSearch = searchAll || searchTime || searchVenue || searchPaper || searchQuestion || searchMethod || searchRemark || searchBib;
         
         // Get base data for current section
         let baseData;
@@ -1319,6 +1394,7 @@
         // If no search terms, show all data
         if (!hasSearch) {
             currentData = baseData;
+            document.getElementById("paperCount").textContent = `${currentData.length} paper${currentData.length !== 1 ? 's' : ''}`;
             if (currentData.length > 0) {
                 document.getElementById("paperTable").style.display = "table";
                 document.getElementById("emptyState").style.display = "none";
@@ -1327,88 +1403,52 @@
             return;
         }
 
-        // Filter and score papers
-        const scoredPapers = baseData.map(paper => {
-            let score = 0;
-            let matches = true;
-
+        // Filter papers based on search criteria
+        const filteredPapers = baseData.filter(paper => {
             const timeText = (paper.time || "").toLowerCase();
             const venueText = (paper.venue || "").toLowerCase();
             const paperText = stripHtml(paper.paper || "").toLowerCase();
             const questionText = stripHtml(paper.question || "").toLowerCase();
             const methodText = stripHtml(paper.method || "").toLowerCase();
             const remarkText = (paper.remark || "").toLowerCase();
-            const allText = `${timeText} ${venueText} ${paperText} ${questionText} ${methodText} ${remarkText}`;
+            const bibText = stripHtml(paper.bib || "").toLowerCase();
+            const allText = `${timeText} ${venueText} ${paperText} ${questionText} ${methodText} ${remarkText} ${bibText}`;
 
             // Check specific field filters - each filter must match if provided
-            if (searchTime) {
-                if (timeText.includes(searchTime)) {
-                    score += 10;
-                } else {
-                    matches = false;
-                }
+            if (searchTime && !timeText.includes(searchTime)) {
+                return false;
             }
-
-            if (searchVenue) {
-                if (venueText.includes(searchVenue)) {
-                    score += 10;
-                } else {
-                    matches = false;
-                }
+            if (searchVenue && !venueText.includes(searchVenue)) {
+                return false;
             }
-
-            if (searchPaper) {
-                if (paperText.includes(searchPaper)) {
-                    score += 10;
-                } else {
-                    matches = false;
-                }
+            if (searchPaper && !paperText.includes(searchPaper)) {
+                return false;
             }
-
-            if (searchQuestion) {
-                if (questionText.includes(searchQuestion)) {
-                    score += 10;
-                } else {
-                    matches = false;
-                }
+            if (searchQuestion && !questionText.includes(searchQuestion)) {
+                return false;
             }
-
-            if (searchMethod) {
-                if (methodText.includes(searchMethod)) {
-                    score += 10;
-                } else {
-                    matches = false;
-                }
+            if (searchMethod && !methodText.includes(searchMethod)) {
+                return false;
             }
-
-            if (searchRemark) {
-                if (remarkText.includes(searchRemark)) {
-                    score += 10;
-                } else {
-                    matches = false;
-                }
+            if (searchRemark && !remarkText.includes(searchRemark)) {
+                return false;
+            }
+            if (searchBib && !bibText.includes(searchBib)) {
+                return false;
             }
 
             // Check "all columns" search - all keywords must appear somewhere
             if (searchAll) {
                 const keywords = searchAll.split(/\s+/).filter(k => k.length > 0);
-                keywords.forEach(keyword => {
-                    if (allText.includes(keyword)) {
-                        score += 5;
-                    } else {
-                        matches = false;
+                for (const keyword of keywords) {
+                    if (!allText.includes(keyword)) {
+                        return false;
                     }
-                });
+                }
             }
 
-            return { paper, score, matches };
+            return true;
         });
-
-        // Filter matched papers and sort by score (highest first)
-        const filteredPapers = scoredPapers
-            .filter(item => item.matches)
-            .sort((a, b) => b.score - a.score)
-            .map(item => item.paper);
 
         currentData = filteredPapers;
 
@@ -1442,6 +1482,7 @@
         document.getElementById("searchQuestion").value = "";
         document.getElementById("searchMethod").value = "";
         document.getElementById("searchRemark").value = "";
+        document.getElementById("searchBib").value = "";
         
         // Reset to full data for current section
         if (currentSection === '__ALL__') {
@@ -1462,21 +1503,123 @@
 
     // Setup search event listeners
     function setupSearchListeners() {
-        const searchInputs = ['searchAll', 'searchTime', 'searchVenue', 'searchPaper', 'searchQuestion', 'searchMethod', 'searchRemark'];
-        searchInputs.forEach(id => {
+        const searchInputIds = ['searchAll', 'searchTime', 'searchVenue', 'searchPaper', 'searchQuestion', 'searchMethod', 'searchRemark', 'searchBib'];
+        searchInputIds.forEach(id => {
             const el = document.getElementById(id);
             if (el) {
-                // Use both 'input' and 'keyup' for better compatibility
-                el.addEventListener('input', performSearch);
-                el.addEventListener('keyup', performSearch);
+                // Only trigger on Enter key for immediate search (no real-time search)
+                el.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') {
+                        performSearch();
+                    }
+                });
             }
         });
+    }
+
+    // Column resizing functionality
+    function makeTableResizable() {
+        const table = document.getElementById('paperTable');
+        const ths = table.querySelectorAll('th');
+
+        ths.forEach(th => {
+            // Check if resizer already exists (idempotent check)
+            if (th.querySelector('.resizer')) return;
+
+            // Create the resizer element
+            const resizer = document.createElement('div');
+            resizer.classList.add('resizer');
+            th.appendChild(resizer);
+
+            // Click on resizer should not trigger sort
+            resizer.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            createResizableColumn(th, resizer);
+        });
+    }
+
+    function createResizableColumn(th, resizer) {
+        let x = 0;
+        let w = 0;
+
+        const mouseDownHandler = function(e) {
+            e.stopPropagation(); // Prevent sort triggering
+            x = e.clientX;
+            
+            const styles = window.getComputedStyle(th);
+            w = parseInt(styles.width, 10);
+
+            document.addEventListener('mousemove', mouseMoveHandler);
+            document.addEventListener('mouseup', mouseUpHandler);
+            
+            resizer.classList.add('resizing');
+            document.body.style.cursor = 'col-resize'; // Global cursor
+            document.body.style.userSelect = 'none'; // Prevent text selection
+        };
+
+        const mouseMoveHandler = function(e) {
+            const dx = e.clientX - x;
+            th.style.width = `${w + dx}px`;
+        };
+
+        const mouseUpHandler = function() {
+            document.removeEventListener('mousemove', mouseMoveHandler);
+            document.removeEventListener('mouseup', mouseUpHandler);
+            resizer.classList.remove('resizing');
+            document.body.style.cursor = '';
+            document.body.style.userSelect = '';
+        };
+
+        resizer.addEventListener('mousedown', mouseDownHandler);
+    }
+
+    // Sidebar resizing
+    function setupSidebarResizer() {
+        const sidebar = document.querySelector('.nav-sidebar');
+        const resizer = document.getElementById('sidebarResizer');
+        const root = document.documentElement;
+        
+        let x = 0;
+        let w = 0;
+
+        const mouseDownHandler = function(e) {
+            x = e.clientX;
+            const sidebarStyle = window.getComputedStyle(sidebar);
+            w = parseInt(sidebarStyle.width, 10);
+            
+            document.addEventListener('mousemove', mouseMoveHandler);
+            document.addEventListener('mouseup', mouseUpHandler);
+            
+            resizer.classList.add('resizing');
+            document.body.style.cursor = 'col-resize';
+            document.body.style.userSelect = 'none';
+        };
+
+        const mouseMoveHandler = function(e) {
+            const dx = e.clientX - x;
+            const newWidth = Math.max(150, Math.min(600, w + dx)); // Limits: 150px to 600px
+            root.style.setProperty('--nav-width', `${newWidth}px`);
+        };
+
+        const mouseUpHandler = function() {
+            document.removeEventListener('mousemove', mouseMoveHandler);
+            document.removeEventListener('mouseup', mouseUpHandler);
+            resizer.classList.remove('resizing');
+            document.body.style.cursor = '';
+            document.body.style.userSelect = '';
+        };
+
+        resizer.addEventListener('mousedown', mouseDownHandler);
     }
 
     // Initialize on DOM ready
     document.addEventListener("DOMContentLoaded", () => {
         initNav();
         setupSearchListeners();
+        makeTableResizable(); // Add resize handles
+        setupSidebarResizer(); // Add sidebar resizer
     });
     
     // Re-typeset MathJax after initial render
