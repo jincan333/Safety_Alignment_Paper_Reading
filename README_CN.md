@@ -2,7 +2,7 @@
 
 ## 概览
 
-[**👉 交互式论文列表 (可排序)**](https://jincan333.github.io/Safety_Alignment_Paper_Reading/)
+[**👉 交互式论文列表 (可排序)**](https://jincan333.github.io/Paper_Reading/)
 
 本仓库追踪并总结关于大基础模型（LFMs）**各类研究主题**的论文。每个条目包含时间、论文链接、研究问题/思路以及核心方法——以便您快速浏览该领域动态。欢迎提交 PR 贡献。
 

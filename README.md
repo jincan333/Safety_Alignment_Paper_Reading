@@ -2,7 +2,7 @@
 
 ## Overview
 
-[**👉 Interactive & Sortable Paper List**](https://jincan333.github.io/Safety_Alignment_Paper_Reading/)
+[**👉 Interactive & Sortable Paper List**](https://jincan333.github.io/Paper_Reading/)
 
 This repository tracks and summarizes papers on various research topics for Large Foundation Models (LFMs). Each entry captures the time, paper link, research question/idea, and the core method—so you can skim the landscape quickly. Contributions via PR are welcome.
 
